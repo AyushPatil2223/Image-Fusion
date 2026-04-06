@@ -1,0 +1,10 @@
+flask
+flask-cors
+Pillow
+numpy
+opencv-contrib-python
+scipy
+
+# EMMA (CVPR 2024) pretrained fusion - optional but recommended
+torch
+einops

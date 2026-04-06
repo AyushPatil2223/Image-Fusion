@@ -1,0 +1,80 @@
+/* Import Outfit from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-slate-950 text-slate-50 antialiased min-h-screen m-0 p-0;
+    font-family: 'Outfit', 'Inter', system-ui, sans-serif;
+    background-image:
+      radial-gradient(ellipse at 15% 50%,  rgba(99, 102, 241, 0.18), transparent 35%),
+      radial-gradient(ellipse at 85% 20%,  rgba(168,  85, 247, 0.15), transparent 35%),
+      radial-gradient(ellipse at 50% 100%, rgba(34,  211, 238, 0.08), transparent 40%);
+    background-attachment: fixed;
+  }
+}
+
+@layer components {
+
+  /* ─────────── Glass panels ─────────── */
+  .glass-panel {
+    @apply bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl shadow-xl;
+  }
+
+  /* ─────────── Upload drop zone ─────────── */
+  .upload-zone {
+    @apply border-2 border-dashed border-white/20 rounded-2xl p-12 text-center
+           transition-all duration-300 bg-white/5 cursor-pointer select-none;
+  }
+  .upload-zone:hover {
+    @apply border-indigo-400 bg-indigo-500/10 shadow-[0_0_24px_rgba(99,102,241,0.25)];
+  }
+  .upload-zone.active {
+    @apply border-indigo-400 bg-indigo-500/20 scale-[1.02];
+  }
+
+  /* ─────────── Buttons ─────────── */
+  .btn-primary {
+    @apply px-6 py-3 rounded-xl font-semibold text-white
+           bg-indigo-600 hover:bg-indigo-500
+           transition-all duration-200
+           shadow-[0_4px_20px_rgba(99,102,241,0.4)]
+           hover:shadow-[0_6px_28px_rgba(99,102,241,0.6)]
+           disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+  .btn-secondary {
+    @apply px-6 py-3 rounded-xl font-medium text-slate-300
+           bg-white/5 hover:bg-white/10
+           border border-white/10 hover:border-white/20
+           transition-all duration-200;
+  }
+
+  /* ─────────── Text gradient ─────────── */
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 to-purple-400;
+    -webkit-background-clip: text;
+  }
+
+  /* ─────────── Method selection cards (FusePage) ─────────── */
+  .method-card {
+    @apply p-4 rounded-xl border border-white/10 bg-white/5
+           cursor-pointer transition-all duration-200
+           hover:bg-white/10 hover:border-indigo-400/50;
+  }
+  .method-card.selected {
+    @apply bg-indigo-600/20 border-indigo-400
+           shadow-[0_0_20px_rgba(99,102,241,0.25)];
+  }
+}
+
+/* ─────────── Scrollbar ─────────── */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: #0a0f1e; }
+::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.18); border-radius: 99px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(255,255,255,0.30); }
+
+/* ─────────── Selection colour ─────────── */
+::selection { background: rgba(99,102,241,0.4); color: #fff; }

@@ -1,0 +1,19 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Virtual Environment
+venv/
+env/
+imagefusion/
+Lib/
+Scripts/
+
+# Node
+node_modules/
+
+# Others
+.DS_Store
+
+backend/results/
